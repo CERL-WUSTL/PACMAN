@@ -2,7 +2,7 @@
 
 This is the repo for ICML 2025 accepted paper Learning Policy Committees for Effective Personalization in MDPs with Diverse Tasks (https://arxiv.org/abs/2503.01885)
 
-YOU MUST READ CAREFULLY OR YOU WILL HAVE A BAD TIME.
+*YOU MUST READ CAREFULLY OR YOU WILL HAVE A BAD TIME.*
 
 Our code makes heavy use of https://github.com/niiceMing/CMTA?tab=readme-ov-file 
 
@@ -30,3 +30,11 @@ Step 6. Run MOORE.sh (provided here, we provide care.sh for reference but all th
 Step 7. Once these 3 are done take the STDOUT of the experiment runs in step 5 and run preprocess_max.py. This will generate a CSV called C_avg_final.csv. This is a raw datafile.
 
 Step 8. Aggregate the data in step 6 with aggregate_results.py. You will need to modify the directory path to the location of C_avg_final.csv. This will write a test and train csv with final results.
+
+
+
+
+
+
+
+Note on checkpointing. We have should_resume = True in our metaworld.yml. This is different from the CMTA repo. This should allow you to simply rerun MOORE.sh should it fail midstream for whatever reason, and then simply paste the outputs together prior to step 7.
