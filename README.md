@@ -25,7 +25,7 @@ Step 4. If you wish to use our clustering you can see the resulting files in met
 Step 5. Go to CMTA/config/experiment/metaworld.yml and add your cluster by specifying which tasks are *ignored*. The provided metaworld.yml has all tasks removed by default. Our .yml files used in the paper are named metaworld_c0_nrand.yaml,metaworld_c1_nrand.yaml, and metaworld_c2_nrand.yaml. Simply comment the task with a hash (#) if its apart of your cluster. You will have K of these metaworld.yml files for this method. They must be named metaworld.yml and be in that location when the script below is called. 
 
 
-Step 6. Run MOORE.sh (provided here, we provide care.sh for reference but all these files are in the repo from step 1). MOORE was our best baseline and it isn't present in the CMTA repo. You need to replace CMTA/mtrl/agent/components/encoder.py with the one present in this directory. You will run this K times, one for each cluster modifying the metaworld.yml file in step 4.
+Step 6. Run MOORE.sh (provided here, we provide care.sh for reference but all these files are in the repo from step 1). MOORE was our best baseline and it isn't present in the CMTA repo. You need to replace CMTA/mtrl/agent/components/encoder.py with the one present in this directory. If you run other baselines using this encoder set self.MOORE=FALSE in that file. You will run this K times, one for each cluster modifying the metaworld.yml file in step 4. 
 
 Step 7. Once these 3 are done take the STDOUT of the experiment runs in step 5 and run preprocess_max.py. This will generate a CSV called C_avg_final.csv. This is a raw datafile.
 
