@@ -10,15 +10,20 @@ This method requires generating clusters of metaworld tasks and then learning po
 
 
 
-Step 1. Download and install  https://github.com/niiceMing/CMTA?tab=readme-ov-file including the specific metaworld version mentioned- this is needed for learning policies in the paper. If you are learning non metaworld or policies some other way this is not needed.
+Step 1. Download and install  https://github.com/niiceMing/CMTA?tab=readme-ov-file including the specific metaworld version mentioned- this is needed for learning policies in the paper. If you are learning non metaworld or policies some other way this is not needed. 
+
 
 Step 2. Install the provided FairRL conda env.
 
-Step 3. To get vector representations of tasks run task_2_vec_LLM_50.py. You may wish to change the textural discription if adding or removing tasks. Note you will need to have a huggingface api key configured and exported.
 
-Step 4. Run clustering.py. This will generate clusters for a given K and epsilon.
+Step 3. You can skip this step if you want to use our embeddings located in the directory to this repo. To get vector representations of tasks run task_2_vec_LLM_50.py. You may wish to change the textural discription if adding or removing tasks. Note you will need to have a huggingface api key configured and exported.
+
+
+Step 4. Run clustering.py. This will generate clusters for a given K and epsilon. clustering.py assumes the embeddings are in ./content (this was originally ran in google colab)
+
 
 Step 5. Go to CMTA/config/experiment/metaworld.yml and add your cluster by specifying which tasks are *ignored*. The provided one has all tasks removed. Simply comment the task with a hash (#) if its apart of your cluster. You will have K of these metaworld.yml files for this method. They must be named metaworld.yml and be in that location when the script below is called. 
+
 
 Step 6. Run MOORE.sh (provided here). This was our best baseline and it isn't present in the CMTA repo. You need to replace CMTA/mtrl/agent/components/encoder.py with the one present in this directory. You will run this K times, one for each cluster modifying the metaworld.yml file in step 4.
 
