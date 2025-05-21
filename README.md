@@ -13,7 +13,7 @@ This method requires generating clusters of metaworld tasks and then learning po
 Step 1. Download and install  https://github.com/niiceMing/CMTA?tab=readme-ov-file including the specific metaworld version mentioned- this is needed for learning policies in the paper. If you are learning non metaworld or policies some other way this is not needed. 
 
 
-Step 2. Install the provided FairRL conda env.
+Step 2. Create the anaconda env from that repo. We called our specific one FairRL (you see that reference elsewhere but its the same repo). One thing about installation is you need install Metaworld-af8417bfc82a3e249b4b02156518d775f29eb289 thats not mentioned as I recall, we cannot upload it here because it has too many files and is too large. This directory will sit inside /CMTA.
 
 
 Step 3. You can skip this step if you want to use our embeddings located in the directory to this repo. To get vector representations of tasks run task_2_vec_LLM_50.py. You may wish to change the textural discription if adding or removing tasks. Note you will need to have a huggingface api key configured and exported.
