@@ -1,0 +1,74 @@
+# @package _group_
+name: metaworld
+builder:
+  _target_: mtrl.experiment.${experiment.name}.Experiment
+init_steps: 3000
+num_train_steps: 1000000
+eval_freq: 3000 # same as save frequency. This should be a muliple of save.buffer.size_per_chunk
+num_eval_episodes: 10
+should_resume: True
+eval_only: False
+random_pos: False
+save:
+  model:
+    retain_last_n: 1
+    # setting a natural number (say 5) retains the last n (say 5) models.
+    # setting -1 retains all the models.
+    # setting 0 retains no models.
+  buffer:
+    should_save: True
+    size_per_chunk: 15000
+    num_samples_to_save: -1 # number of samples to save. Set to -1 to save all samples
+save_dir: ${setup.save_dir}
+save_video: True
+envs_to_exclude_during_training:
+    - assembly-v1
+    - basketball-v1
+    - bin-picking-v1
+    - box-close-v1
+    - button-press-topdown-v1
+    - button-press-topdown-wall-v1
+    - button-press-v1
+    - button-press-wall-v1
+    - coffee-button-v1
+    - coffee-pull-v1
+    - coffee-push-v1
+    - dial-turn-v1
+    - disassemble-v1
+    - door-close-v1
+    - door-lock-v1
+    - door-open-v1
+    - door-unlock-v1
+    - drawer-close-v1
+    - drawer-open-v1
+    - faucet-close-v1
+    - faucet-open-v1
+    - hammer-v1
+    - hand-insert-v1
+    - handle-press-side-v1
+    - handle-press-v1
+    - handle-pull-side-v1
+    - handle-pull-v1
+    - lever-pull-v1
+    - peg-insert-side-v1
+    - peg-unplug-side-v1
+    - pick-out-of-hole-v1
+    - pick-place-v1
+    - pick-place-wall-v1
+    - plate-slide-back-side-v1
+    - plate-slide-back-v1
+    - plate-slide-side-v1
+    - plate-slide-v1
+    - push-back-v1
+    - push-v1
+    - push-wall-v1 
+    - reach-v1
+    - reach-wall-v1
+    - shelf-place-v1 
+    - soccer-v1
+    - stick-pull-v1
+    - stick-push-v1
+    - sweep-into-v1
+    - sweep-v1 
+    - window-close-v1
+    - window-open-v1 
