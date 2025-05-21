@@ -8,7 +8,7 @@ This method requires generating clusters of metaworld tasks and then learning po
 
 
 
-Step 1. Download and install this repo including the specific metaworld version mentioned https://github.com/niiceMing/CMTA?tab=readme-ov-file - this is needed for learning policies.
+Step 1. Download and install  https://github.com/niiceMing/CMTA?tab=readme-ov-file including the specific metaworld version mentioned- this is needed for learning policies in the paper. If you are learning non metaworld or policies some other way this is not needed.
 
 Step 2. Install the provided FairRL conda env.
 
